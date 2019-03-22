@@ -1,3 +1,10 @@
+import csv
+import os
+
+# Globals
+str_dir = os.path.dirname(os.path.abspath(__file__))
+str_dir_cities_csv = os.path.join(str_dir, 'cities.csv')
+
 # Create a class to hold a city location. Call the class "City". It should have
 # fields for name, latitude, and longitude.
 
@@ -21,21 +28,27 @@ class City:
 #
 # Note that the first line of the CSV is header that describes the fields--this
 # should not be loaded into a City object.
-cities = []
+list_cities = []
 
 
-def cityreader(cities=[]):
+def cityreader(list_cities=[]):
   # TODO Implement the functionality to read from the 'cities.csv' file
   # For each city record, create a new City instance and add it to the
   # `cities` list
+    with open(str_dir_cities_csv, newline='') as csvfile:
+        csv_dict_reader = csv.DictReader(csvfile)
+        for row in csv_dict_reader:
+            list_cities.append(
+                City(row['city'], float(row['lat']), float(row['lng']))
+            )
 
-    return cities
+    return list_cities
 
 
-cityreader(cities)
+cityreader(list_cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
-for c in cities:
+for c in list_cities:
     print(c)
 
 # STRETCH GOAL!
