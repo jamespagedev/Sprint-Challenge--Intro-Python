@@ -66,8 +66,9 @@ print(f)
 # Write a list comprehension that creates a list of new Humans like the old
 # list, except with all the names capitalized and the ages with 5 added to them.
 # The "humans" list should be unmodified.
-print("All names capitalized:")
-g = []
+# Student: the tests are asking for this, so I changed the test description
+print("All names capitalized and ages plus 5:")
+g = [Human(human.name.upper(), human.age+5) for human in humans]
 print(g)
 
 # Write a list comprehension that contains the square root of all the ages.
