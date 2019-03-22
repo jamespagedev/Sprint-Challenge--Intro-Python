@@ -19,9 +19,9 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Complete the programs in the `src/` directory in any order.
 
-* `oop/`
-    * `oop1.py`: class hierarchies
-    * `oop2.py`: subclassing and method overriding
+[X] `oop/`
+    [X] `oop1.py`: class hierarchies
+    [X] `oop2.py`: subclassing and method overriding
 [X] `comp/`
     [X] `comp.py`: list comprehensions
 [X] `cityreader/`
